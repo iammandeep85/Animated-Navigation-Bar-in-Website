@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    *{
+        margin: 0; 
+        padding: 0; 
+        box-sizing: border-box;
+    }
+
+    .nav1{
+        background-color: #4CAF50;
+        width: 100%;
+        height: 40px;
+        color:white;
+    }
+
+    #test {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        display: flex;
+        height: 40px;
+        background-color: black;
+        color:white;
+        border-color: transparent;
+        -webkit-transition: background-color 2s; /* Safari */
+        transition: background-color 2s;
+    }   
+    .image_scroll{
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        color: #4CAF50;
+        width: 100%;
+    }
+    .image_scroll img
+    {
+        width: 100%;
+        padding-bottom: 100%;
+    }
+</style>
+</head>
+<body id="body">
+
+    <nav class="nav1">
+        Navigation Bar 1
+    </nav>
+
+    <div id="test">Navigation Bar 2</div>
+    <div class="image_scroll" >
+        <img id="img_set" src="macbook-pro-on-desk-4.jpg">
+    </div>
+
+</body>
+<script>
+
+        // When the user scrolls down 50px from the top of the document, resize the header's font size
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            document.getElementById("img_set").style.width = "70%";
+            document.getElementById("img_set").style.margin = "20%";
+            document.getElementById("test").style.backgroundColor = "rgba(255,255,255,0.9)";
+            document.getElementById("test").style.color = '#000000';
+            document.getElementById("img_set").style.transition = "all 2s";
+
+          } 
+          else {
+            document.getElementById("img_set").style.width = "100%";
+            document.getElementById("img_set").style.margin = "0%";
+            document.getElementById("test").style.backgroundColor = "black";
+            document.getElementById("test").style.color = '#FFFFFF';
+          }
+        }
+        </script>
+</html>
